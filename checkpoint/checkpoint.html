@@ -1,0 +1,57 @@
+<script type="text/javascript">
+    RED.nodes.registerType('checkpoint', {
+        category: 'config',
+        color: '#EF8FA6',
+        defaults: {
+            name: { value : "", required: true },
+            server: { value : "", required: true },
+            port: { value : "443" }
+        },
+        credentials: {
+            user: { type:"text", required: true },
+            password: { type:"password", required: true }
+        },
+        icon: "checkpoint.png",
+        label: function() {
+            return this.name;
+        },
+        paletteLabel: 'Checkpoint'
+    });
+</script>
+
+<script type="text/x-red" data-template-name="checkpoint">
+    <div class="form-row">
+        <label for="node-config-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-config-input-name" placeholder="Name">
+    </div>
+
+    <div class="form-row">
+        <label for="node-config-input-server"><i class="fa fa-server"></i> Server</label>
+        <input type="text" id="node-config-input-server" placeholder="192.168.1.12 / host.domain">
+    </div>
+    
+    <div class="form-row">
+        <label for="node-config-input-port"><i class="fa fa-plug"></i> Port</label>
+        <input type="text" id="node-config-input-port" placeholder="443">
+    </div>
+    
+    <p><b>Credentials</b></p>
+    <div style="margin-left: 20px; display: block;" class="node-input-checkpointAuth-row">
+        <div class="form-row">
+            <label for="node-config-input-user"><i class="fa fa-user"></i>
+            <span data-i18n="node-red:common.label.user">Username</span></label>
+            <input type="text" id="node-config-input-user" dir="">
+        </div>
+        <div class="form-row">
+            <label for="node-config-input-password"><i class="fa fa-asterisk"></i>
+            <span data-i18n="node-red:common.label.password">Password</span></label>
+            <input type="password" id="node-config-input-password">
+        </div>
+    </div>
+
+
+</script>
+
+<script type="text/x-red" data-help-name="checkpoint">
+    <p>Specify the required parameters to connect to your Checkpoint appliance</p>
+</script>

@@ -1,0 +1,66 @@
+<script type="text/javascript">
+    RED.nodes.registerType('checkpoint block', {
+        category: 'checkpoint',
+        color: '#EF8FA6',
+        defaults: {
+            name: { value : "" },
+            wildfire: { type: 'checkpoint', required: true },
+            group: { value: '' },
+            comment: { value: '' }
+        },
+        inputs: 1,
+        outputs: 0,
+        inputLabels: "ip",
+        paletteLabel: 'block ip',
+        icon: "checkpoint.png",
+        label: function() {
+            return this.name || 'checkpoint block';
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="checkpoint block">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-wildfire"><i class="fa fa-server"></i> Checkpoint</label>
+        <input type="text" id="node-input-wildfire" placeholder="wildfire">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-group"><i class="icon-box"></i> Group</label>
+        <input type="text" id="node-input-group" placeholder="BadIpList">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-comment"><i class="icon-comment"></i> Comment</label>
+        <input type="text" id="node-input-comment" placeholder="Set via node-red">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="checkpoint block">
+    <p>Send a payload to this node to block an ip.</p>
+    <h3>Inputs</h3>
+    <dl class="message-properties">
+        <dt>payload.ip
+            <span class="property-type">ip to block </span>
+        </dt>
+        <dt>payload.group
+            <span class="property-type">the group to add the ip into</span>
+        </dt>
+        <dt>payload.comment
+            <span class="property-type">the comment to attach to the ip</span>
+        </dt>
+    </dl>
+    <h3>Details</h3>
+    <p>The <b>group</b> field is optional, it will default to 'BadIpList', or the value you enter in the node.
+        If you send payload.group, it will be the value that is used instead.
+    </p>
+    <p>The <b>comment</b> field is also optional, it will default to 'Set via node-red',
+        or the value you enter in the node.
+        If you send payload.comment, it will be the value that is used instead.
+    </p>
+</script>

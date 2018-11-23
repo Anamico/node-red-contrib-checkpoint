@@ -1,0 +1,51 @@
+{
+  "name": "node-red-contrib-checkpoint",
+  "version": "0.4.0",
+  "description": "Checkpoint nodes for Node-RED",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "node-red": {
+    "nodes": {
+      "checkpoint": "checkpoint/checkpoint.js",
+      "checkpoint block": "checkpoint/block.js"
+    }
+  },
+  "repository": "github:Anamico/node-red-contrib-checkpoint",
+  "author": {
+    "name": "Andrew Longhorn",
+    "email": "Andrew_Longhorn@McAfee.com",
+    "url": "https://www.linkedin.com/in/andrewlonghorn/"
+  },
+  "contributors": [
+    {
+      "name": "Andrew Longhorn",
+      "email": "Andrew_Longhorn@McAfee.com",
+      "url": "https://www.linkedin.com/in/andrewlonghorn/"
+    }
+  ],
+  "license": "MIT",
+  "homepage": "https://flows.nodered.org/node/node-red-contrib-checkpoint",
+  "bugs": "https://github.com/Anamico/node-red-contrib-checkpoint/issues",
+  "dependencies": {
+    "async": "^2.6.1",
+    "fast-xml-parser": "^3.12.5",
+    "request": "^2.88.0"
+  },
+  "keywords": [
+    "checkpoint",
+    "firewall",
+    "reputation",
+    "security",
+    "node-red",
+    "threat",
+    "automation"
+  ],
+  "maintainers": [
+    {
+      "name": "Andrew Longhorn",
+      "email": "Andrew_Longhorn@McAfee.com"
+    }
+  ]
+}
