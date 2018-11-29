@@ -1,4 +1,3 @@
-const util = require('./util.js');
 const async = require('async');
 
 /*
@@ -12,7 +11,6 @@ module.exports = function(RED) {
 
     function Block(config) {
         RED.nodes.createNode(this, config);
-        this.persistenceFile = config.persistenceFile;
         var node = this;
 
         this._checkpoint = RED.nodes.getNode(config.checkpoint);
